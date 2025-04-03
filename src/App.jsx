@@ -1,17 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-// import './App.css'
+import "./App.css";
+import ApplyForm from "./pages/ApplyForm";
+import InternshipDetails from "./pages/InternshipDetails";
+import InternshipTraining from "./pages/InternshipTraining";
+import Footer from "./components/Footer";
+import Navbar from "./pages/Navbar";
+
 
 function App() {
-  
-
   return (
-    <>
-    <div>This is me </div>
-      {/* Start your code from here  */}
-    </>
-  )
+    <div>
+      <Navbar/>
+      <InternshipTraining />
+      {/* <InternshipDetails /> */}
+      {/* <ApplyForm /> */}
+      <Footer/> 
+    </div>
+  );
 }
 
-export default App
+export default App;
+// ..
