@@ -9,7 +9,7 @@ function App() {
       <Navbar></Navbar>
       <Homepage/>
       <Routes>
-        <Route path="/" element={<Homepage/>} />
+        {/* <Route path="/" element={<Homepage/>} /> */}
         {/* <Route path="/details" element={<InternshipDetails />} />
         <Route path="/training" element={<InternshipTraining />} />
         <Route path="/career" element={<Career />} />
