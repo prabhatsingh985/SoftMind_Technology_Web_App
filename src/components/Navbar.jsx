@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../assets/logo.png";
-import Service from '../pages/Service'; // Assuming you have a Service component
-import Career from '../pages/Career';
+
 
 export default function Navbar() {
   // Determine if the viewport is mobile-sized
