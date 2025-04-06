@@ -1,92 +1,202 @@
 import React from "react";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { FaMapMarkerAlt, FaCalendarAlt, FaBriefcase } from "react-icons/fa";
 
+const internshipData = {
+  "1": {
+    title: "Cloud Computing",
+    description: "Cloud Computing (AWS, AZURE, GCP)",
+    location: "Delhi",
+    duration: "3 Months",
+    type: "Unpaid Internship",
+    salary: "2.5 LPA to 5.5 LPA",
+    applyBy: "13/02/2024",
+    openings: 20,
+    about:
+      "Welcome to SoftMind Technologies, where innovation meets expertise! We are passionate about empowering individuals with cutting-edge tech skills, and our Cloud Computing Internship Program is designed to help you master AWS, Azure, and GCP.",
+    programDetails: [
+      "Service Models",
+      "Deployment Models",
+      "Networking and Content Delivery",
+      "Containers and Orchestration",
+      "Architecture and Virtualization",
+    ],
+    responsibilities: [
+      "Deploying scalable apps on AWS/Azure",
+      "Building cloud-native solutions",
+      "Learning containerization tools",
+    ],
+    skills: ["Basic Cloud Concepts", "10+2 Education"],
+  },
+  "2": {
+    title: "Web Development",
+    description: "MERN Stack Development",
+    location: "Remote",
+    duration: "6 Months",
+    type: "Paid Internship",
+    salary: "4 LPA to 7 LPA",
+    applyBy: "25/04/2024",
+    openings: 15,
+    about:
+      "This internship will help you develop real-world MERN stack projects, build APIs, and collaborate using GitHub. Perfect for students looking to go full-stack!",
+    programDetails: [
+      "React Frontend",
+      "Express.js Backend",
+      "MongoDB Database Integration",
+      "Node.js Server Setup",
+    ],
+    responsibilities: [
+      "Build responsive UIs",
+      "Create and test REST APIs",
+      "Work on Git/GitHub with team",
+    ],
+    skills: ["JavaScript", "React", "MongoDB", "Git"],
+  },
+  "3": {
+    title: "AI & Machine Learning",
+    description: "Deep Learning & Data Science",
+    location: "Bangalore",
+    duration: "4 Months",
+    type: "Unpaid Internship",
+    salary: "N/A",
+    applyBy: "10/05/2024",
+    openings: 10,
+    about:
+      "Join our ML internship to learn how AI is transforming industries. You'll work with real datasets, learn TensorFlow, and build your own predictive models.",
+    programDetails: [
+      "Data Preprocessing & Cleaning",
+      "Supervised & Unsupervised Learning",
+      "TensorFlow & Keras",
+      "Model Evaluation Techniques",
+    ],
+    responsibilities: [
+      "Train machine learning models",
+      "Analyze data trends",
+      "Optimize algorithms",
+    ],
+    skills: ["Python", "Math Basics", "Problem Solving"],
+  },
+  "4": {
+    title: "Cybersecurity",
+    description: "Ethical Hacking & Security Analysis",
+    location: "Mumbai",
+    duration: "5 Months",
+    type: "Paid Internship",
+    salary: "5 LPA to 8 LPA",
+    applyBy: "30/04/2024",
+    openings: 12,
+    about:
+      "Learn how to defend systems and perform ethical hacking in our cybersecurity internship. You'll explore tools like Wireshark, Kali Linux, and more.",
+    programDetails: [
+      "Network Security Fundamentals",
+      "Vulnerability Assessment",
+      "Penetration Testing",
+      "SIEM Tools",
+    ],
+    responsibilities: [
+      "Simulate cyber attacks",
+      "Monitor network traffic",
+      "Identify system flaws",
+    ],
+    skills: ["Networking Basics", "Linux Commands", "Curiosity to Learn"],
+  },
+};
+
 const InternshipDetails = () => {
+  const { id } = useParams();
+  const data = internshipData[id];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  if (!data) {
+    return (
+      <div className="mt-20 text-center text-xl text-gray-700">
+        Internship Not Found
+      </div>
+    );
+  }
+
   return (
-    <div className="max-w-[90%] w-full mx-auto mt-20 mb-20 space-y-20 px-4 sm:px-6 lg:px-8">
-      <h1 className="text-black font-extrabold text-5xl sm:text-6xl mb-6 text-left">
-        Cloud Computing in 3 months
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      {/* Title */}
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-10 leading-tight">
+        {data.title} Internship
+        <span className="text-indigo-600"> ({data.duration})</span>
       </h1>
 
-      <div className="p-8 bg-[#EBEAFF] shadow-lg rounded-xl border border-gray-300 space-y-12" style={{ boxShadow: "0px 3.26px 9.46px 0px #00000040" }}>
-        <div className="bg-gray-100 p-6 rounded-lg space-y-6">
-          <h2 className="text-2xl font-bold">Cloud Computing</h2>
-          <p className="text-lg text-gray-600">Cloud Computing (AWS, AZURE, GCP)</p>
+      {/* Card */}
+      <div className="bg-[#F7F7FD] p-10 rounded-3xl shadow-lg border border-gray-200 space-y-10">
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 text-gray-700">
-            <p className="flex items-center gap-2">
-              <FaMapMarkerAlt /> Delhi
-            </p>
-            <p className="flex items-center gap-2">
-              <FaCalendarAlt /> 3 Months
-            </p>
-            <p className="flex items-center gap-2">
-              <FaBriefcase /> Unpaid Internship
-            </p>
+        {/* Header */}
+        <div className="space-y-4">
+          <h2 className="text-2xl font-semibold text-gray-800">{data.title}</h2>
+          <p className="text-gray-600 text-lg">{data.description}</p>
+
+          <div className="flex flex-wrap items-start gap-4 mt-4 text-gray-700 font-medium">
+            <span className="flex items-center gap-2">
+              <FaMapMarkerAlt className="text-indigo-500" />
+              {data.location}
+            </span>
+            <span className="flex items-center gap-2">
+              <FaCalendarAlt className="text-indigo-500" />
+              {data.duration}
+            </span>
+            <span className="flex items-center gap-2">
+              <FaBriefcase className="text-indigo-500" />
+              {data.type}
+            </span>
           </div>
         </div>
 
+        {/* Section */}
         <div>
-          <h3 className="text-xl font-bold">Salary</h3>
-          <p className="text-lg">Annual CTC: 2.5 LPA to 5.5 LPA</p>
+          <h3 className="text-xl font-bold text-gray-800">💸 Salary</h3>
+          <p className="text-lg text-gray-700">{data.salary}</p>
         </div>
 
         <div>
-          <h3 className="text-xl font-bold">Apply By</h3>
-          <p className="text-lg">13/02/2024</p>
+          <h3 className="text-xl font-bold text-gray-800">📅 Apply By</h3>
+          <p className="text-lg text-gray-700">{data.applyBy}</p>
         </div>
 
         <div>
-          <h3 className="text-xl font-bold">About Us</h3>
-          <p className="text-lg text-gray-700">
-            Welcome to SoftMind Technologies, where innovation meets expertise!
-            Established with a vision to transform aspiring individuals into
-            tech-savvy professionals, SoftMind Technologies is a cutting-edge
-            institute that brings together a team of experienced and dedicated
-            educators. Our mission is to bridge the gap between education and
-            industry by offering comprehensive training programs and internships
-            in various tech domains.
-          </p>
+          <h3 className="text-xl font-bold text-gray-800">📖 About Us</h3>
+          <p className="text-lg text-gray-700">{data.about}</p>
         </div>
 
         <div>
-          <h3 className="text-xl font-bold">About this Internship Program</h3>
-          <p className="text-lg text-gray-700">
-            Cloud computing internship programs provide students and aspiring
-            professionals with the opportunity to gain hands-on experience in
-            one of the most rapidly growing technology fields.
-          </p>
-          <ul className="list-disc pl-5 mt-2 text-lg text-gray-700 space-y-2">
-            <li>Service Models</li>
-            <li>Deployment Models</li>
-            <li>Networking and Content Delivery</li>
-            <li>Containers and Orchestration</li>
-            <li>Architecture and Virtualization</li>
+          <h3 className="text-xl font-bold text-gray-800">🎓 About this Internship Program</h3>
+          <ul className="list-disc pl-5 mt-3 space-y-2 text-gray-700 text-base">
+            {data.programDetails.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
           </ul>
         </div>
 
         <div>
-          <h3 className="text-xl font-bold">
-            Selected intern’s day-to-day responsibilities include:
-          </h3>
-          <ul className="list-disc pl-5 mt-2 text-lg text-gray-700 space-y-2">
-            <li>Building a blog right from scratch</li>
-            <li>Understanding cloud concepts and core concepts of different services</li>
-            <li>Applying cloud computing concepts to real-world scenarios</li>
+          <h3 className="text-xl font-bold text-gray-800">🛠 Responsibilities</h3>
+          <ul className="list-disc pl-5 mt-3 space-y-2 text-gray-700 text-base">
+            {data.responsibilities.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
           </ul>
         </div>
 
         <div>
-          <h3 className="text-xl font-bold">Skills Required:</h3>
-          <ul className="list-disc pl-5 mt-2 text-lg text-gray-700 space-y-2">
-            <li>English Proficiency (at least Medium)</li>
-            <li>10+2 Education</li>
+          <h3 className="text-xl font-bold text-gray-800">🧠 Skills Required</h3>
+          <ul className="list-disc pl-5 mt-3 space-y-2 text-gray-700 text-base">
+            {data.skills.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
           </ul>
         </div>
 
         <div>
-          <h3 className="text-xl font-bold">Number of Openings:</h3>
-          <p className="text-lg"><b>20</b></p>
+          <h3 className="text-xl font-bold text-gray-800">🔢 Number of Openings</h3>
+          <p className="text-lg text-gray-700 font-semibold">{data.openings}</p>
         </div>
       </div>
     </div>

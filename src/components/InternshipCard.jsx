@@ -1,37 +1,45 @@
 import React from "react";
 import { FaMapMarkerAlt, FaCalendarAlt, FaBriefcase } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-const InternshipCard = ({ title, description, location, duration, type, bgColor }) => {
+const InternshipCard = ({ id, title, description, location, duration, type, bgColor }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className={`rounded-[20px] p-6 w-[300px] shadow-lg ${bgColor}`}>
-      {/* Icon */}
-      <div className="w-14 h-14 bg-white bg-opacity-30 rounded-full flex items-center justify-center mb-4">
-        <FaBriefcase className="text-black text-2xl" />
+    <div
+      className={`rounded-2xl p-6 w-[300px] shadow-md hover:shadow-xl transition-shadow duration-300 ${bgColor} flex flex-col justify-between min-h-[460px] transform hover:scale-105 hover:-translate-y-1 transition-transform`}
+    >
+      {/* Header */}
+      <div>
+        <div className="w-14 h-14 bg-white bg-opacity-40 rounded-full flex items-center justify-center mb-5">
+          <FaBriefcase className="text-black text-2xl" />
+        </div>
+
+        <h2 className="text-black font-semibold text-xl mb-1">{title}</h2>
+        <p className="text-gray-700 text-sm leading-snug">{description}</p>
+
+        <div className="mt-4 space-y-2 text-sm text-black font-medium">
+          <p className="flex items-center gap-2">
+            <FaMapMarkerAlt className="text-gray-600" /> {location}
+          </p>
+          <p className="flex items-center gap-2">
+            <FaCalendarAlt className="text-gray-600" /> {duration}
+          </p>
+          <p className="flex items-center gap-2">
+            <FaBriefcase className="text-gray-600" /> {type}
+          </p>
+        </div>
       </div>
 
-      {/* Title & Description */}
-      <h2 className="text-black font-bold text-xl">{title}</h2>
-      <p className="text-gray-700 text-sm">{description}</p>
-
-      {/* Details */}
-      <div className="mt-4 space-y-2 text-black">
-        <p className="flex items-center gap-2">
-          <FaMapMarkerAlt /> {location}
-        </p>
-        <p className="flex items-center gap-2">
-          <FaCalendarAlt /> {duration}
-        </p>
-        <p className="flex items-center gap-2">
-          <FaBriefcase /> {type}
-        </p>
-      </div>
-
-      {/* Buttons (Stacked Vertically) */}
+      {/* Buttons */}
       <div className="mt-6 flex flex-col gap-2">
-        <button className="bg-white text-black font-bold w-full py-2 rounded-full shadow-md transition duration-300 ease-in-out hover:bg-gray-300 hover:shadow-lg">
+        <button
+          onClick={() => navigate(`/details/${id}`)}
+          className="bg-white text-black font-semibold w-full py-2 rounded-full shadow-sm hover:bg-gray-200 transition duration-200"
+        >
           View Details
         </button>
-        <button className="bg-black text-white font-bold w-full py-2 rounded-full transition duration-300 ease-in-out hover:bg-gray-800 hover:shadow-lg flex justify-center items-center gap-2">
+        <button className="bg-black text-white font-semibold w-full py-2 rounded-full hover:bg-gray-900 transition duration-200">
           Apply →
         </button>
       </div>

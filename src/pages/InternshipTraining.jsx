@@ -2,6 +2,8 @@ import React from "react";
 import InternshipSection from "../components/InternshipSection";
 import InternshipOffers from "../components/InternshipOffers";
 import InternshipCertificate from "../components/InternshipCertificate";
+import InternshipDetails from "./InternshipDetails";
+import ApplyForm from "./ApplyForm";
 
 const InternshipTraining = () => {
   return (
