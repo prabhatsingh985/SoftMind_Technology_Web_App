@@ -71,6 +71,7 @@ export default function HomeServicesSection() {
   const cardStyle = {
     textAlign: "center",
     position: "relative",
+    width: isMobile ? "120px" : "176px", // Approximately equivalent to Tailwind's w-44 (~176px)
   };
 
   // Circular image container: width/height adjust for mobile vs. desktop
@@ -95,6 +96,9 @@ export default function HomeServicesSection() {
     marginTop: "10px",
     fontSize: isMobile ? "1rem" : "1.25rem", // Adjust font size based on viewport
     fontWeight: "bold",
+    // padding: "20px",
+    // width: "10%",
+
   };
 
 
