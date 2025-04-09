@@ -3,11 +3,13 @@ import { BrowserRouter as Router } from 'react-router-dom'; // Added `Router`
 import { Routes, Route } from 'react-router-dom'; // Added `Route`
 import Homepage from './pages/Homepage';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 function App() {
   return (
     <>
       <Navbar></Navbar>
       <Homepage/>
+      <Footer />
       <Routes>
         {/* <Route path="/" element={<Homepage/>} /> */}
         {/* <Route path="/details" element={<InternshipDetails />} />
