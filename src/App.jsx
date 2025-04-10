@@ -9,6 +9,7 @@ import ApplyForm from "./pages/ApplyForm";
 import InternshipDetails from "./pages/InternshipDetails";
 import InternshipTraining from "./pages/InternshipTraining";
 import Footer from './components/Footer';
+import Blogs from './pages/Blogs';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path="/" element={<Homepage/>} />
         <Route path="/details/:id" element={<InternshipDetails />} />
         <Route path="/training" element={<InternshipTraining />} />
+        <Route path="/training" element={<InternshipTraining />} />
+        <Route path="/blog" element={<Blogs />} />
       </Routes>
       <Footer></Footer>
     </>
