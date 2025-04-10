@@ -116,6 +116,7 @@ export default function Navbar() {
         <li><Link to="/blog" style={linkStyle} className="nav-link">Blogs</Link></li>
         <li><Link to="/Career" style={linkStyle} className="nav-link">Career</Link></li>
         <li><Link to="/contact" style={linkStyle2} className="nav-link">About us</Link></li>
+        <li><Link to="/about" style={linkStyle} className="nav-link">Contact us</Link></li>
       </ul> 
       <style>{`
         .nav-link:hover {
