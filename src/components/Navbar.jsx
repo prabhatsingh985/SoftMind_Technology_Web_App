@@ -109,7 +109,8 @@ export default function Navbar() {
 
       {/* Menu List */}
       <ul style={navListStyle}>
-        <li><Link to="/" style={linkStyle} className="nav-link">Insights</Link></li>
+        <li><Link to="/" style={linkStyle} className="nav-link">Home</Link></li>
+        <li><Link to="/insight" style={linkStyle} className="nav-link">Insights</Link></li>
         <li><Link to="/service" style={linkStyle} className="nav-link">Service</Link></li>
         <li><Link to="/training" style={linkStyle2} className="nav-link">Internships &amp; Training</Link></li>
         <li><Link to="/blog" style={linkStyle} className="nav-link">Blogs</Link></li>
