@@ -11,6 +11,9 @@ import InternshipTraining from "./pages/InternshipTraining";
 import Footer from './components/Footer';
 import Service from './pages/Service';
 import Blogs from './pages/Blogs';
+import Career from './pages/Career';
+import Insight from './pages/Insight';
+
 
 function App() {
   return (
@@ -19,10 +22,13 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Homepage/>} />
+        <Route path="/insight" element={<Insight/>} />
         <Route path="/details/:id" element={<InternshipDetails />} />
         <Route path="/training" element={<InternshipTraining />} />
         <Route path="/service" element={<Service/>} />
         <Route path="/blog" element={<Blogs/>} />
+        <Route path="/career" element={<Career/>} />
+        
 
       </Routes>
       <Footer></Footer>
