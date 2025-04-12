@@ -3,8 +3,10 @@ import homepageimage1 from "../assets/homepageimage1.jpg";
 import HomepageHerosectionimage2 from "../assets/HomepageHerosectionimage2.jpeg";
 import HomepageHerosectionimage3 from "../assets/HomepageHerosectionimage3.jpeg";
 import { ChevronDown } from 'lucide-react';
-
+import ContactUs from '../pages/ContactUs';
+import { useNavigate } from 'react-router-dom';
 const HeroSection = () => {
+  const navigate = useNavigate();
   const handleScrollClick = () => {
     window.scrollBy({
       top: 760, // Adjust this value to set how far you want to scroll down
@@ -173,6 +175,7 @@ const HeroSection = () => {
 
       {/* Contact Us Button */}
       <button
+      onClick={() => navigate("/contact")} 
         style={{
           position: "fixed",
           bottom: "20px",
@@ -206,6 +209,8 @@ const HeroSection = () => {
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
         Contact Us
+        {/* <Link to="/contact">Contact us</Link> */}
+      
       </button>
 
       <style>

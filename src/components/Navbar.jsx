@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from "../assets/logo.png";
-
 
 export default function Navbar() {
   // Determine if the viewport is mobile-sized
@@ -23,33 +22,31 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Navbar container style
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
+
+  // Base styles
   const navbarStyle = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '0 20px',
     height: '80px',
-    // backgroundColor: 'red',
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
     position: 'relative',
   };
 
-  // Logo style
   const logoStyle = {
     display: 'flex',
     alignItems: 'center',
   };
 
-  // Hamburger icon style (only visible on mobile)
   const hamburgerStyle = {
     fontSize: '1.8rem',
     cursor: 'pointer',
     display: isMobile ? 'block' : 'none',
-    opacity:"0.8",
+    opacity: "0.8",
   };
 
-  // Navigation list style; on mobile, display as a column with absolute positioning when open
   const navListStyle = {
     listStyle: 'none',
     margin: 0,
@@ -66,31 +63,38 @@ export default function Navbar() {
     zIndex: 1000,
   };
 
-  // Link style for all menu items
+  // Base link style for menu items
   const linkStyle = {
-
     textDecoration: 'none',
     color: 'black',
     padding: '0.5rem 1rem',
-    // margin: '0 0.2px',
-    textWeight: 'bold',
-    fontWeight: 'bold', 
+    fontWeight: 'bold',
+    transition: 'background-color 0.3s, color 0.3s',
   };
-  const linkStyle2 = {
 
-    textDecoration: 'none',
-    color: 'black',
+  // Variant for links with different padding
+  const linkStyle2 = {
+    ...linkStyle,
     padding: '0.5rem 0rem',
-    // margin: '0 0.2px',
-    textWeight: 'bold',
-    fontWeight: 'bold', 
+  };
+
+  // Active style (applied when route is active)
+  const activeStyle = {
+    color: '#6a5acd',
+    backgroundColor: 'rgba(106, 90, 205, 0.1)',
+    borderRadius: '4px',
+  };
+
+  // Handle link click: if mobile, close the hamburger menu.
+  const handleLinkClick = () => {
+    if (menuOpen) setMenuOpen(false);
   };
 
   return (
     <nav style={navbarStyle}>
       {/* Logo Section */}
       <div style={logoStyle}>
-        <Link to="/" style={{ display: 'inline-block' }}>
+        <NavLink to="/" style={{ display: 'inline-block' }} onClick={handleLinkClick}>
           <img
             src={logo}
             alt="Logo"
@@ -99,25 +103,89 @@ export default function Navbar() {
             style={{ objectFit: 'contain' }}
             loading="lazy"
           />
-        </Link>
+        </NavLink>
       </div>
 
       {/* Hamburger Icon (visible on mobile) */}
-      <div onClick={() => setMenuOpen(!menuOpen)} style={hamburgerStyle}>
+      <div onClick={toggleMenu} style={hamburgerStyle}>
         &#9776;
       </div>
 
       {/* Menu List */}
       <ul style={navListStyle}>
-        <li><Link to="/" style={linkStyle} className="nav-link">Home</Link></li>
-        <li><Link to="/insight" style={linkStyle} className="nav-link">Insights</Link></li>
-        <li><Link to="/service" style={linkStyle} className="nav-link">Service</Link></li>
-        <li><Link to="/training" style={linkStyle2} className="nav-link">Internships &amp; Training</Link></li>
-        <li><Link to="/blog" style={linkStyle} className="nav-link">Blogs</Link></li>
-        <li><Link to="/Career" style={linkStyle} className="nav-link">Career</Link></li>
-        <li><Link to="/contact" style={linkStyle2} className="nav-link">About us</Link></li>
-        <li><Link to="/about" style={linkStyle} className="nav-link">Contact us</Link></li>
-      </ul> 
+        <li>
+          <NavLink
+            to="/insight"
+            style={({ isActive }) =>
+              isActive ? { ...linkStyle, ...activeStyle } : linkStyle
+            }
+            onClick={handleLinkClick}
+            className="nav-link"
+          >
+            Insights
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/service"
+            style={({ isActive }) =>
+              isActive ? { ...linkStyle, ...activeStyle } : linkStyle
+            }
+            onClick={handleLinkClick}
+            className="nav-link"
+          >
+            Service
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/training"
+            style={({ isActive }) =>
+              isActive ? { ...linkStyle2, ...activeStyle } : linkStyle2
+            }
+            onClick={handleLinkClick}
+            className="nav-link"
+          >
+            Internships &amp; Training
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/blog"
+            style={({ isActive }) =>
+              isActive ? { ...linkStyle, ...activeStyle } : linkStyle
+            }
+            onClick={handleLinkClick}
+            className="nav-link"
+          >
+            Blogs
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/Career"
+            style={({ isActive }) =>
+              isActive ? { ...linkStyle, ...activeStyle } : linkStyle
+            }
+            onClick={handleLinkClick}
+            className="nav-link"
+          >
+            Career
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/AboutUs"
+            style={({ isActive }) =>
+              isActive ? { ...linkStyle2, ...activeStyle } : linkStyle2
+            }
+            onClick={handleLinkClick}
+            className="nav-link"
+          >
+            About us
+          </NavLink>
+        </li>
+      </ul>
       <style>{`
         .nav-link:hover {
           color: #6a5acd;
