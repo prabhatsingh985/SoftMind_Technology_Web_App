@@ -2,7 +2,7 @@ import React from "react";
 
 const InternshipCertificate = () => {
   return (
-    <div className="relative w-[90%] max-w-[1578px] mx-auto mt-16 py-16 px-4 sm:px-6 bg-gradient-to-br from-indigo-100 via-white to-purple-100 overflow-hidden rounded-[44px] shadow-xl">
+    <div className="relative w-[90%] max-w-[1578px] mx-auto mt-16 mb-5 py-16 px-4 sm:px-6 bg-gradient-to-br from-indigo-100 via-white to-purple-100 overflow-hidden rounded-[44px] shadow-xl">
       {/* Blurred Circles for Background Design */}
       <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-purple-300 rounded-full blur-3xl opacity-30 z-0" />
       <div className="absolute bottom-[-80px] right-[-80px] w-[250px] h-[250px] bg-indigo-400 rounded-full blur-2xl opacity-30 z-0" />
