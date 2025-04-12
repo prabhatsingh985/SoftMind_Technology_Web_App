@@ -20,11 +20,6 @@ import homepageimage9 from "../assets/homepageimage9.png";
 import homepageimage10 from "../assets/homepageimage10.png";
 import HomeBlogSection from '../components/HomeBlogSection';
 import HomeClientTestimonials from '../components/HomeClientTestimonials';
-// import { services } from "../data/services"; // Ensure this path is correct 
-// import { testimonials } from "../data/testimonials"; // Ensure this path is correct 
-// import { blogs } from "../data/blogs"; // Ensure this path is correct   
-// import "slick-carousel/slick/slick.css";    
-// import "slick-carousel/slick/slick-theme.css";  
 
 const Homepage = () => {
     
