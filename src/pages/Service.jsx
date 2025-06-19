@@ -20,7 +20,7 @@ const services = [
     cardTitle: "Software Development", 
     cardDescription: "Custom software solutions tailored to your needs.", 
     serviceTitle: "Software Development", 
-    detailDescription: "We provide end-to-end software development services, ensuring high-quality, scalable, and secure solutions for your business.", 
+    detailDescription: "Website Development involves creating and maintaining websites, ensuring they are functional, visually appealing, and responsive across devices. Application Development focuses on building software for web, mobile, or desktop platforms, including design, coding, and testing to ensure seamless performance and user experience.", 
     cardImage: sdCard, 
     detailImage: sdDetail 
   },
@@ -77,7 +77,7 @@ const ServicesPage = () => {
   return (
     <div className="bg-white font-sans">
       <div className="relative h-[600px] sm:h-[700px] md:h-[800px] lg:h-[900px] flex items-center justify-center bg-white text-gray-900 font-bold px-4 sm:px-6 md:px-8">
-        <img 
+        <img
           src={hero} 
           alt="Services" 
           className="absolute inset-6 sm:inset-8 md:inset-12 w-[calc(100%-3rem)] sm:w-[calc(100%-4rem)] md:w-[calc(100%-6rem)] h-[calc(100%-3rem)] sm:h-[calc(100%-4rem)] md:h-[calc(100%-6rem)] object-cover rounded-2xl sm:rounded-3xl" 
