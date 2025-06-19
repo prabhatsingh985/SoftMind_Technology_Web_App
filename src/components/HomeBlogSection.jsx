@@ -159,8 +159,8 @@ export default function HomeBlogSection() {
           />
           <div style={mainBlogTextStyle}>
             <h3 style={mainBlogTitleStyle}>{blogs[0].title}</h3>
-            <a href="/" style={mainBlogLinkStyle}>
-              Read More →
+            <a href="/blog" style={mainBlogLinkStyle}>
+              Read More → 
             </a>
           </div>
         </div>
@@ -175,7 +175,7 @@ export default function HomeBlogSection() {
                 style={smallBlogImageStyle}
               />
               <h4 style={smallBlogTitleStyle}>{blog.title}</h4>
-              <a href="/" style={smallBlogLinkStyle}>
+              <a href="/blog" style={smallBlogLinkStyle}>
                 Read More →
               </a>
             </div>

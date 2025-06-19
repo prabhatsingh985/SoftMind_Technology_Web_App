@@ -26,6 +26,9 @@ const Footer = () => {
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
             <img src={Facebook} alt="Facebook" className="h-8 w-8 hover:opacity-80 cursor-pointer" />
           </a>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <img src={Facebook} alt="Facebook" className="h-8 w-8 hover:opacity-80 cursor-pointer" />
+          </a>
           <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
             <img src={YouTube} alt="YouTube" className="h-8 w-8 hover:opacity-80 cursor-pointer" />
           </a>

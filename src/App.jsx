@@ -15,14 +15,14 @@ import Career from './pages/Career';
 import Insight from './pages/Insight';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
-
+import ScrollToTop from './helper/ScrollToTop'; // Importing ScrollToTop component
 
 function App() {
   return (
     <>
+     <ScrollToTop />
       <Navbar/>
-      
-      
+    
        <Routes>
         <Route path="/" element={<Homepage/>} />
         <Route path="/insight" element={<Insight/>} />
@@ -31,7 +31,7 @@ function App() {
         <Route path="/service" element={<Service/>} />
         <Route path="/blog" element={<Blogs/>} />
         <Route path="/career" element={<Career/>} />
-        <Route path='/about' element={<AboutUs/>} />
+        <Route path='/AboutUs' element={<AboutUs/>} />
         <Route path='/contact' element={<ContactUs/>} />
         
 
