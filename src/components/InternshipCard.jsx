@@ -39,7 +39,7 @@ const InternshipCard = ({ id, title, description, location, duration, type, bgCo
         >
           View Details
         </button>
-        <button className="bg-black text-white font-semibold w-full py-2 rounded-full hover:bg-gray-900 transition duration-200">
+        <button onClick={() => navigate('/apply-form')} className="bg-black text-white font-semibold w-full py-2 rounded-full hover:bg-gray-900 transition duration-200">
           Apply →
         </button>
       </div>

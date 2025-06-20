@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import InternshipIllustration from "../assets/undraw_designer_efwz.svg";
 
 const InternshipSection = () => {
+  const navigate = useNavigate();
+
+  const handleApplyClick = ()  => {
+    navigate('/apply-form');
+  }
+
   return (
     <div
       className="relative w-[90%] max-w-[1578px] mx-auto rounded-[44px] px-6 sm:px-8 md:px-12 lg:px-16 py-10 sm:py-14 lg:py-20 shadow-xl flex flex-col md:flex-row items-center md:items-start bg-gradient-to-br from-[#5B6EF5] to-[#8B46FA]"
@@ -20,7 +27,7 @@ const InternshipSection = () => {
           future you’re proud of.
         </p>
 
-        <button className="group bg-white text-black font-semibold text-lg md:text-xl px-6 md:px-10 py-3 md:py-4 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-fit mx-auto md:mx-0 flex items-center gap-3">
+        <button onClick={handleApplyClick} className="group bg-white text-black font-semibold text-lg md:text-xl px-6 md:px-10 py-3 md:py-4 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-fit mx-auto md:mx-0 flex items-center gap-3">
           Apply Now
           <span className="text-2xl md:text-3xl font-extrabold group-hover:translate-x-1 transition-transform duration-300">
             →
