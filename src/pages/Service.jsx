@@ -20,7 +20,7 @@ const services = [
     cardTitle: "Software Development", 
     cardDescription: "Custom software solutions tailored to your needs.", 
     serviceTitle: "Software Development", 
-    detailDescription: "We provide end-to-end software development services, ensuring high-quality, scalable, and secure solutions for your business.", 
+    detailDescription: "We provide end-ment services, ensuring high-quality, scalable, and secure solutions for your business.", 
     cardImage: sdCard, 
     detailImage: sdDetail 
   },

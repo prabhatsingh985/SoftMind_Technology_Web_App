@@ -2,12 +2,12 @@ import React from "react";
 
 // Sample images for avatars (replace with your own images)
 import avatar1 from "../assets/avatar1.png";
-// import avatar2 from "../assets/avatar2.png";
-// import avatar3 from "../assets/avatar3.png";
-// import avatar4 from "../assets/avatar4.png";
-// import avatar5 from "../assets/avatar5.png";
-// import avatar6 from "../assets/avatar6.png";
-// import avatarCenter from "../assets/avatarCenter.png";
+import hometesti2 from "../assets/hometesti2.png";
+import hometesti3 from "../assets/hometesti3.png"; 
+import hometesti4 from "../assets/hometesti4.jpg";
+import hometesti5 from "../assets/hometesti5.png";
+import hometesti6 from "../assets/hometesti6.jpg";
+
 
 const ClientTestimonials = () => {
   const avatarStyle = {
@@ -63,7 +63,7 @@ const ClientTestimonials = () => {
           flexWrap: "wrap",
         }}
       >
-        {[avatar1, avatar1, avatar1, avatar1, avatar1, avatar1].map(
+        {[avatar1, hometesti2, hometesti3, hometesti4, hometesti5, hometesti6].map(
           (avatar, index) => (
             <div key={index} style={{ width: "60px", height: "60px" }}>
               <img src={avatar} alt="client" style={avatarStyle} />

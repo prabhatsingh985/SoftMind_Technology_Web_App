@@ -1,26 +1,30 @@
 import React, { useState, useEffect } from "react";
+import homeblogimage1 from "../assets/homeblogimage1.jpg";
 import homepageimage10 from "../assets/homepageimage10.png";
-import { TbTextSize } from "react-icons/tb";
+import homeblogimage2 from "../assets/homeblogimage2.jpg";
+import homeblogimage3 from "../assets/homeblogimage3.jpg";
+import homeblogimage4 from "../assets/homeblogimage4.jpg";
+import homeblogimage5 from "../assets/homeblogimage5.jpg";
 
 const blogs = [
         {
-          image: homepageimage10,
+          image: homeblogimage1,
           title: "How to Build a Scalable Application up to 1 Million Users on AWS",
         },
         {
-          image: homepageimage10,
+          image: homeblogimage2,
           title: "How to Build a Scalable Application up to 1 Million Users on AWS",
         },
         {
-          image: homepageimage10,
+          image: homeblogimage3,
           title: "How to Build a Scalable Application up to 1 Million Users on AWS",
         },
         {
-          image: homepageimage10,
+          image: homeblogimage4,
           title: "How to Build a Scalable Application up to 1 Million Users on AWS",
         },
         {
-          image: homepageimage10,
+          image: homeblogimage5,
           title: "How to Build a Scalable Application up to 1 Million Users on AWS",
         },
       ];

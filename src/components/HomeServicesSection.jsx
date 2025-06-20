@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from "react";
 import homepageimage10 from "../assets/homepageimage10.png";
 import testmolsicons from "../assets/testimolsicons4.png";
+import homepageserving1 from "../assets/homepageserving1.jpg";
+import homepageserving2 from "../assets/homepageserving2.jpg";
+import homepageserving3 from "../assets/homepageserving3.jpg";
 
 export default function HomeServicesSection() {
   const services = [
     {
-      image: homepageimage10,
+      image: homepageserving1,
       icon: testmolsicons,
       title: "Software Development",
     },
     {
-      image: homepageimage10,
+      image: homepageserving2,
       icon: testmolsicons,
       title: "Business Intelligence & Analytics",
     },
     {
-      image: homepageimage10,
+      image: homepageserving3,
       icon: testmolsicons,
       title: "Business Intelligence & Analytics",
     },
