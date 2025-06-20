@@ -108,7 +108,7 @@ const Homepage = () => {
 
 
             {/* Responsive Secion */}
-            <HomeResponsiveSection></HomeResponsiveSection>
+            {/* <HomeResponsiveSection></HomeResponsiveSection> */}
             
                 
 
