@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Typical from "react-typical"; // Import react-typical for typing animation
-import logo from "../assets/logo.png";
 import map from "../assets/contact/map.jpg";
 
 const ContactUs = () => {
@@ -63,7 +62,7 @@ const ContactUs = () => {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold">Get in touch</h2>
             <p className="mt-4 text-sm md:text-base">
-              📞 7391265552 <br />
+              📞 7321063552 <br />
               ✉️ info@softmindtechnologies.com <br />
               📍 Softmind Technologies, New Delhi - 110074
             </p>

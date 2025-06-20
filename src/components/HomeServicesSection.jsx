@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use } from "react";
 import homepageimage10 from "../assets/homepageimage10.png";
 import testmolsicons from "../assets/testimolsicons4.png";
 import homepageserving1 from "../assets/homepageserving1.jpg";
@@ -6,6 +6,7 @@ import homepageserving2 from "../assets/homepageserving2.jpg";
 import homepageserving3 from "../assets/homepageserving3.jpg";
 
 export default function HomeServicesSection() {
+   const navigate = useNavigate();
   const services = [
     {
       image: homepageserving1,
@@ -101,9 +102,13 @@ export default function HomeServicesSection() {
     fontWeight: "bold",
     // padding: "20px",
     // width: "10%",
+    cursor: "pointer",
 
   };
-
+   function ButtonClicked() {
+     console.log("Button clicked!");
+     navigate('/service');
+   }
 
    const ButtonheaderTextStyle = {
     fontSize: isMobile ? "6vw" : "2.5vw", // Larger on mobile, relatively smaller on desktop
@@ -117,6 +122,7 @@ export default function HomeServicesSection() {
     fontSize: "16px",
     fontWeight: "bold",
     borderRadius: "50px",
+    cursor: "pointer",
     // WebkitTextFillColor: "transparent",
   };
 
@@ -135,6 +141,7 @@ export default function HomeServicesSection() {
     fontFamily: "Poppins",
 
   };
+
   
   const plusStyle = {
     fontSize: "18px",
@@ -159,12 +166,12 @@ export default function HomeServicesSection() {
                 style={imageStyle}
               />
             </div>
-            <h3 style={titleStyle}>{service.title}</h3>
+            <button style={titleStyle} onClick={ButtonClicked}  >{service.title}</button>
           </div>
         ))}
       </div>
       <div style={headerContainerStyle}>
-      <button style={ButtonheaderTextStyle}>View more + </button>
+      <button style={ButtonheaderTextStyle} onClick={ButtonClicked}>View more + </button>
       </div>
       {/* <div style={headerContainerStyle}>
        <button style={buttonStyle}>

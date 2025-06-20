@@ -15,14 +15,14 @@ import Career from './pages/Career';
 import Insight from './pages/Insight';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
-
+import ScrollToTop from './helper/ScrollToTop'; // Importing ScrollToTop component
 
 function App() {
   return (
     <>
+     <ScrollToTop />
       <Navbar/>
-      
-      
+    
        <Routes>
         <Route path="/" element={<Homepage/>} />
         <Route path="/insight" element={<Insight/>} />

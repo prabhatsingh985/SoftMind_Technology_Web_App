@@ -14,7 +14,7 @@ export default function HomeContactForm() {
             Please fill up the form for more enquiries
           </h6>
           <p className="mt-4 md:mt-110  text-base mt-4 pt-0">
-            📞 7391265552 <br />
+            📞 7321063552 <br />
             ✉ info@softmindtechnologies.com <br />
             📍 Softmind Technologies, New Delhi - 110074
           </p>
