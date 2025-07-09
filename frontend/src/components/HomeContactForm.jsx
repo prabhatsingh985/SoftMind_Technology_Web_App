@@ -29,7 +29,7 @@ export default function HomeContactForm() {
     };
 
     try {
-      const res = await fetch("http://localhost:9901/api/send/contact", {
+      const res = await fetch("http://localhost:9901/api/send/homepagecontact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

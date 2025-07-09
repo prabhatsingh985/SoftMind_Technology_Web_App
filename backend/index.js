@@ -77,8 +77,8 @@ const SendmailTootp = async (userMail, mailSubject, mailText) => {
     }
 };
 
-// API to receive user data and send mail
-app.post('/api/send/contact', async (req, res) => {
+// API to receive user data and send mail from Homepage Contact Form
+app.post('/api/send/homepagecontact', async (req, res) => {
   try {
     const {
       firstName,
@@ -102,7 +102,7 @@ app.post('/api/send/contact', async (req, res) => {
     const mailText = `
 Hello Admin,
 
-A new user has submitted their contact information:
+A new user has submitted their contact information from Homepage Contact Form.:
 
 Name: ${fullName}
 Email: ${email}
@@ -136,7 +136,7 @@ Your Server`.trim();
       }
     });
   } catch (error) {
-    console.error("Error in /api/send/contact:", error);
+    console.error("Error in /api/send/homepagecontact:", error);
     res
       .status(500)
       .json({ message: 'Internal server error', error: error.message, status: -1 });
@@ -145,6 +145,153 @@ Your Server`.trim();
 
 
 
+
+// API to receive user data and send mail from Contact Us Form 
+ app.post('/api/send/Contactpagecontact', async (req, res) => {
+  try {
+    const {
+      firstName,
+      lastName,
+      email,
+      phone,
+      tellUs,
+      message = ''
+    } = req.body;
+
+    // Validate required fields
+    if (!firstName || !lastName || !email || !phone || !tellUs) {
+      return res.status(400).json({
+        status: 0,
+        message: "firstName, lastName, email, phone and tellUs are required"
+      });
+    }
+
+    const fullName = `${firstName.trim()} ${lastName.trim()}`;
+    const mailSubject = `New Contact Form Submission from ${fullName}`;
+    const mailText = `
+Hello Admin,
+
+A new user has submitted their contact information from the Contact Us page:
+
+Name: ${fullName}
+Email: ${email}
+Phone: ${phone}
+Tell Us: ${tellUs}
+Message: ${message || 'N/A'}
+
+Regards,
+Your Server`.trim();
+
+    const mailSent = await SendmailTootp(
+      /* to: */ process.env.ADMIN_EMAIL,
+      /* subject */ mailSubject,
+      /* text/body */ mailText
+    );
+
+    if (!mailSent) {
+      return res.status(500).json({
+        status: -1,
+        message: "Failed to send email to admin"
+      });
+    }
+
+    return res.status(200).json({
+      status: 1,
+      message: "Your message has been received. We will get back to you shortly!",
+      data: { firstName, lastName, email, phone, tellUs, message }
+    });
+  } catch (error) {
+    console.error("Error in /api/send/Contactpagecontact:", error);
+    return res.status(500).json({
+      status: -1,
+      message: "Internal server error",
+      error: error.message
+    });
+  }
+});
+
+
+
+
+
+
+// API to receive user data and send mail from Apply Form
+app.post('/api/send/Applypagecontact', async (req, res) => {
+  try {
+    const {
+      firstName,
+      lastName,
+      email,
+      phone,
+      career,
+      technologies,
+      message = ''
+    } = req.body;
+
+    // Basic validation
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !phone ||
+      !career ||
+      !technologies
+    ) {
+      return res.status(400).json({
+        status: 0,
+        message:
+          'firstName, lastName, email, phone, career, and technologies are required'
+      });
+    }
+
+    // Compose email
+    const fullName = `${firstName.trim()} ${lastName.trim()}`;
+    const subject = `New Application from ${fullName}`;
+    const body = `
+Hello Admin,
+
+You have received a new application via the Apply page:
+
+Name: ${fullName}
+Email: ${email}
+Phone: ${phone}
+Career Opportunity: ${career}
+Technologies: ${technologies}
+Message: ${message || 'N/A'}
+
+Regards,
+Your Server
+    `.trim();
+
+    // Send to admin inbox
+    const mailSent = await SendmailTootp(
+      process.env.ADMIN_EMAIL,
+      subject,
+      body
+    );
+
+    if (!mailSent) {
+      return res.status(500).json({
+        status: -1,
+        message: 'Failed to send email to admin'
+      });
+    }
+
+    // Success
+    return res.status(200).json({
+      status: 1,
+      message: 'Application submitted successfully!',
+      data: { firstName, lastName, email, phone, career, technologies, message }
+    });
+  } catch (err) {
+    console.error('Error in /api/send/Applypagecontact:', err);
+    return res.status(500).json({
+      status: -1,
+      message: 'Internal server error',
+      error: err.message
+    });
+  }
+});
 
 // Start server
 app.listen(PORT, HOST, () => {
