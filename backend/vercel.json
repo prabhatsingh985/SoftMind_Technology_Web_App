@@ -1,11 +1,14 @@
 {
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    },
-    "installCommand": "npm install --production",
-    "buildCommand": ""
+  "version": 2,
+ 
+  "env": {
+    "NODE_ENV": "production"
   },
+ 
+  "installCommand": "npm install --production --force",
+ 
+  "buildCommand": "npm run build",
+ 
   "routes": [
     { "src": "/(.*)", "dest": "index.js" }
   ]
