@@ -20,8 +20,8 @@ const ApplyForm = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     setStatus(null);
-    try {
-      const resp = await fetch('http://localhost:9901/api/send/Applypagecontact', {
+    try {                           //https://meet.google.com/ehx-bpup-dvb
+      const resp = await fetch(`${import.meta.env.VITE_BASE_URL}/api/send/Applypagecontact`, { 
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

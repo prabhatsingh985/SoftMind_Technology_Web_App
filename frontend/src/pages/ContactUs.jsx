@@ -24,7 +24,7 @@ const ContactUs = () => {
     setStatus(null);
     try {
       const response = await fetch(
-        "http://localhost:9901/api/send/Contactpagecontact",
+        `${import.meta.env.VITE_BASE_URL}/api/send/Contactpagecontact`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

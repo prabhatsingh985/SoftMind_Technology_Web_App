@@ -29,7 +29,7 @@ export default function HomeContactForm() {
     };
 
     try {
-      const res = await fetch("http://localhost:9901/api/send/homepagecontact", {
+      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/api/send/homepagecontact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
