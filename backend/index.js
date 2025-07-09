@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
-// require('dotenv').config();
+require('dotenv').config();
 const cors = require('cors');
 
 
@@ -10,16 +10,16 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Server config
-const HOST = process.env.HOST || 'localhost';
-const PORT = process.env.PORT || 9901;
+const HOST = process.env.HOST  
+const PORT = process.env.PORT  
 
 // Mail config
-const MailHost = process.env.MAIL_HOST || "mail.coraltele.com";
-const MailPort = parseInt(process.env.MAIL_PORT, 10) || 587;
+const MailHost = process.env.MAIL_HOST
+const MailPort = parseInt(process.env.MAIL_PORT, 10)  
 const MailSecure = process.env.MAIL_SECURE === 'true';
-const MailUser = process.env.MAIL_USER || "mailgateway@coraltele.com";
-const MailPassword = process.env.MAIL_PASSWORD || "%$#Maig#$&7634";
-const AdminUser = process.env.ADMIN_MAIL_ID || "ps2656728@gmail.com";
+const MailUser = process.env.MAIL_USER  
+const MailPassword = process.env.MAIL_PASSWORD  
+const AdminUser = process.env.ADMIN_MAIL_ID  
 
 // Optional: Unused but fixed Sendmail function
 const Sendmail = async (username, memberList, subject = "Default Subject", text = "Default Text") => {
