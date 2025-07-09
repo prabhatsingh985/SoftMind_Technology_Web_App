@@ -1,4 +1,8 @@
 {
   "presets": ["@babel/preset-env"],
-  "ignore": ["node_modules"]
+  "ignore": [
+    "node_modules/babel/test",
+    "**/__tests__",
+    "**/*.spec.js"
+  ]
 }
