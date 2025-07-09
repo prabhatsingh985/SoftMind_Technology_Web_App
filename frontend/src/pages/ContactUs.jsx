@@ -24,7 +24,7 @@ const ContactUs = () => {
     setStatus(null);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BASE_URL}/api/send/Contactpagecontact`,
+        `https://softmind-technology-web-app.onrender.com/api/send/Contactpagecontact`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

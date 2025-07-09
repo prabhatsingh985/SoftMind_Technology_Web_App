@@ -21,7 +21,7 @@ const ApplyForm = () => {
     e.preventDefault();
     setStatus(null);
     try {                           //https://meet.google.com/ehx-bpup-dvb
-      const resp = await fetch(`${import.meta.env.VITE_BASE_URL}/api/send/Applypagecontact`, { 
+      const resp = await fetch(`https://softmind-technology-web-app.onrender.com/api/send/Applypagecontact`, { 
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

@@ -29,7 +29,7 @@ export default function HomeContactForm() {
     };
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/api/send/homepagecontact`, {
+      const res = await fetch(`https://softmind-technology-web-app.onrender.com/api/send/homepagecontact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
