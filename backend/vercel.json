@@ -1,0 +1,12 @@
+{
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "installCommand": "npm install --production",
+    "buildCommand": ""
+  },
+  "routes": [
+    { "src": "/(.*)", "dest": "index.js" }
+  ]
+}
