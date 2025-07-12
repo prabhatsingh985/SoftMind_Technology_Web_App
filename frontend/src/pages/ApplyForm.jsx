@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import arrow from '../assets/Vector 15.png'; // Adjust the path as necessary
+import img1 from '../assets/rb_939 1.png'; // Adjust the path as necessary
 
 const ApplyForm = () => {
   const [formData, setFormData] = useState({
@@ -20,7 +22,7 @@ const ApplyForm = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     setStatus(null);
-    try {                           //https://meet.google.com/ehx-bpup-dvb
+    try {                           
       const resp = await fetch(`https://softmind-technology-web-app.onrender.com/api/send/Applypagecontact`, { 
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -44,7 +46,7 @@ const ApplyForm = () => {
       >
         <h1 className="text-xl sm:text-3xl font-bold mb-3 sm:mb-4 flex items-center gap-2" style={{ background: 'linear-gradient(0deg, #6770F3 0%, #8346F8 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
           Apply Now
-          <img src="/src/assets/Vector 15.png" alt="Arrow" className="w-5 sm:w-6 h-5 sm:h-6" />
+          <img src={arrow} alt="Arrow" className="w-5 sm:w-6 h-5 sm:h-6" />
         </h1>
         <p className="hidden md:block text-base text-black max-w-[1000px] leading-relaxed">
           Welcome to SoftMind Technologies, where innovation meets expertise! Established with a vision to transform aspiring individuals into tech-savvy professionals, we bridge the gap between education and industry with comprehensive internship programs in Web, Cloud, AI, and more.
@@ -58,7 +60,7 @@ const ApplyForm = () => {
       <div className="flex flex-col md:flex-row items-start mt-6 sm:mt-8 gap-6 sm:gap-8">
         {/* Illustration */}
         <div className="w-full md:w-1/2 flex justify-center select-none pointer-events-none" tabIndex={-1}>
-          <img src="/src/assets/rb_939 1.png" alt="Illustration" className="w-full max-w-[350px] sm:max-w-[450px] h-auto object-contain select-none" draggable={false} />
+          <img src={img1} alt="Illustration" className="w-full max-w-[350px] sm:max-w-[450px] h-auto object-contain select-none" draggable={false} />
         </div>
 
         {/* Form */}

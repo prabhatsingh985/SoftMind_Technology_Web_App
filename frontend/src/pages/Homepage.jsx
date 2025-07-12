@@ -9,10 +9,7 @@ import homepageimage5 from "../assets/homepageimage5.png";
 import homepageimage6 from "../assets/homepageimage6.png";  
 import HomeResponsiveSection from '../components/HomeResponsiveSection';
 import HomeServicesSection from '../components/HomeServicesSection';
-// import Slider from "react-slick";   
-// import "slick-carousel/slick/slick.css";
 import HomeContactForm from '../components/HomeContactForm';
-// import "slick-carousel/slick/slick-theme.css";
 import testmolsicons from "../assets/testimolsicons4.png";
 import homepageimage7 from "../assets/homepageimage7.png";
 import homepageimage8 from "../assets/homepageimage8.png";
@@ -22,294 +19,88 @@ import HomeBlogSection from '../components/HomeBlogSection';
 import HomeClientTestimonials from '../components/HomeClientTestimonials';
 
 const Homepage = () => {
-    
+  const reasons = [
+    { icon: homepageimage4, title: 'Customized Solutions', text: 'We tailor our services to meet your unique business needs, aligning perfectly with your goals.' },
+    { icon: homepageimage5, title: 'Quality & Reliability', text: 'Our QA processes ensure robust, scalable software that performs flawlessly.' },
+    { icon: homepageimage6, title: 'Comprehensive Support', text: 'We provide ongoing maintenance and support to keep your systems running smoothly.' },
+  ];
 
-      
-     const services = [
-        {
-          image: homepageimage10,
-          icon: testmolsicons,
-          title: "Software Development",
-        },
-        {
-          image: homepageimage10,
-          icon: testmolsicons,
-          title: "Business Intelligence & Analytics",
-        },
-        {
-          image: homepageimage10,
-          icon: testmolsicons,
-          title: "Business Intelligence & Analytics",
-        },
-        {
-          image: homepageimage10,
-          icon: testmolsicons,
-          title: "Business Intelligence & Analytics",
-        },
-      ];
+  const services = [
+    { image: homepageimage10, icon: testmolsicons, title: 'Software Development' },
+    { image: homepageimage10, icon: testmolsicons, title: 'Business Intelligence & Analytics' },
+    { image: homepageimage10, icon: testmolsicons, title: 'Cloud Solutions' },
+    { image: homepageimage10, icon: testmolsicons, title: 'Cybersecurity' },
+  ];
 
-      const testimonials = [
-        {
-          img: homepageimage10,
-          name: "John Doe",
-          role: "Software Engineer",
-          text: "This company helped us transform our digital presence with cutting-edge software solutions.",
-        },
-        {
-          img: homepageimage10,
-          name: "Jane Smith",
-          role: "UX Designer",
-          text: "Their design team delivered a seamless user experience. Highly recommended!",
-        },
-        {
-          img: homepageimage10,
-          name: "Robert Brown",
-          role: "Marketing Head",
-          text: "Their SEO services boosted our rankings dramatically within months!",
-        },
-        {
-            img: homepageimage10,
-            name: "John Doe",
-            role: "Software Engineer",
-            text: "This company helped us transform our digital presence with cutting-edge software solutions.",
-          },
-      ];
-      const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 4, // Show 4 items at a time
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-      };
-      
-    return (
+  const visitors = [
+    { number: '23+', label: 'Visitors' },
+    { number: '45+', label: 'Projects' },
+    { number: '45+', label: 'Active Clients' },
+    { number: '45+', label: 'Experts' },
+  ];
 
-        <div>
-            {/* <Navbar/> */}
-            {/* Homepage content */}
-            <HeroSection></HeroSection>
-            {/* <!-- Hero 1 - Bootstrap Brain Component --> */}
-{/* <section class="bsb-hero-1 px-3 ml-10 mr-10 mt-1 rounded-3xl bsb-overlay bsb-hover-pull" style={{ backgroundImage: `url(${homepageimage1})` }}>
-  <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-12 col-md-11 col-lg-9 col-xl-7 col-xxl-6 text-center text-white">
-        <h2 class="display-3 fw-bold mb-3">Art of Design</h2>
-        <p class="lead mb-5">Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.</p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <button type="button" class="btn bsb-btn-xl btn-light gap-3">Free Consultation</button>
-          <button type="button" class="btn bsb-btn-xl btn-outline-light">Buy Credits</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> */}
+  const testimonials = [
+    { img: homepageimage7, name: 'John Doe', role: 'Software Engineer', text: 'This company helped us transform our digital presence with cutting-edge software solutions.' },
+    { img: homepageimage8, name: 'Jane Smith', role: 'UX Designer', text: 'Their design team delivered a seamless user experience. Highly recommended!' },
+    { img: homepageimage9, name: 'Robert Brown', role: 'Marketing Head', text: 'Their SEO services boosted our rankings dramatically within months!' },
+    { img: homepageimage10, name: 'Emily White', role: 'Project Manager', text: 'Excellent project delivery and timely communication throughout.' },
+  ];
 
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* <Navbar /> */}
+      <HeroSection />
 
-            {/* Responsive Secion */}
-            {/* <HomeResponsiveSection></HomeResponsiveSection> */}
-            
-                
-  
-               <div style={{
-                marginTop: "50px",
-               }}>
-               </div>
-                 {/* Visitors Section */}
-            <div style={{
-                display: "flex",
-                justifyContent: "space-around",
-                alignItems: "center",
-                background: "#8247F8", // Gradient background
-                color: "white",
-                padding: "20px",
-                borderRadius: "25px",
-                maxWidth: "80%",
-                margin: "auto",
-                
-            }}>
-                {[
-                    { number: "23+", label: "No. of visitor" },
-                    { number: "45+", label: "No. of Project" },
-                    { number: "45+", label: "Active Clients" },
-                    { number: "45+", label: "Experts" }
-                ].map((item, index) => (
-                    <div key={index} style={{ textAlign: "center" }}>
-                        <div style={{ fontSize: "2.5vw", fontWeight: "bold" }}>{item.number}</div>
-                        <div style={{ fontSize: "1.5vw", fontWeight: "bold" }}>{item.label}</div>
-                    </div>
-                ))}
-            </div>
+      <main className="space-y-24 px-4 sm:px-6 lg:px-8">
+        {/* Responsive Images Section (if needed) */}
+        <HomeResponsiveSection />
 
-
-            {/* Why choose us section */}
-            <div>
-                <div style={{ textAlign: "center", padding: "20px", marginTop: "50px" }}>
-                    <h2 style={{
-                        fontSize: "2.5vw",
-                        fontWeight: "bold",
-                        backgroundImage: `linear-gradient(to right, #8C34F8, #6868F0)`,
-                        WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-                        // Purple text color
-                        // backgroundColor: "black",
-                    }}>
-                        Why choose us ?
-                    </h2>
-
-                    <p style={{
-                        fontSize: "1vw",
-                        color: "#000000", // Dark grey text
-                        maxWidth: "800px",
-                        margin: "auto",
-                        lineHeight: "1.5"
-                    }}>
-                        An IT firm or MSP who keeps your IT running smoothly at all times is like a plumber
-                        who fixes your pipes; that’s what they are supposed to do. Many IT firms struggle.
-                    </p>
-                </div>
-
-
-
-                <div style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    gap: "20px",
-                    padding: "20px",
-                    backgroundImage: `linear-gradient(to right, #AF00FF, #40A1E7)`,
-                        WebkitBackgroundClip: "text",
-    // WebkitTextFillColor: "transparent",
-                }}>
-                    {[
-                        {
-                            icon: homepageimage4, // Ensure this is correctly imported
-                            title: "Customized Solutions",
-                            text: "We understand that every business is unique. We tailor our services to meet your specific needs, ensuring that the solutions we develop align perfectly with your goals and requirements."
-                        },
-                        {
-                            icon: homepageimage5, // Replace with actual imported image
-                            title: "Quality & Reliability",
-                            text: "We are committed to delivering high-quality software that is robust, reliable, and scalable. Our rigorous testing and quality assurance processes ensure that you receive a product that performs flawlessly."
-                        },
-                        {
-                            icon: homepageimage6, // Replace with actual imported image
-                            title: "Comprehensive Support",
-                            text: "Our partnership doesn’t end with the delivery of the software. We offer ongoing support and maintenance to ensure that your systems continue to operate smoothly and efficiently."
-                        }
-                    ].map((item, index) => (
-                        <div key={index} style={{
-                            textAlign: "center",
-                            background: "white",
-                            borderRadius: "15px",
-                            border: "2px solid rgb(200, 180, 255)",
-                            padding: "30px",
-                            maxWidth: "300px",
-                            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center", // Center content including image
-                            color:"#AF00FF"
-                        }}>
-                            <img
-                                src={item.icon}
-                                alt={item.title}
-                                style={{
-                                    width: "60px",
-                                    height: "60px",
-                                    marginBottom: "15px" // More spacing between image and title
-                                }}
-                            />
-                            <h3 style={{
-                                color: "rgb(123, 97, 255)",
-                                fontSize: "1.5vw",
-                                fontWeight: "bold",
-                                marginBottom: "10px" // Space between title and text
-                            }}>
-                                {item.title}
-                            </h3>
-                            <p style={{
-                                color: "#858585",
-                                fontSize: "1vw",
-                                lineHeight: "1.5"
-                            }}>
-                                {item.text}
-                            </p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-
-
-            <HomeServicesSection/>
-
-
-            {/* What Client says about us seciton */}
-            <HomeClientTestimonials></HomeClientTestimonials>
-            {/* <div 
-            style={{ maxWidth: "80%", margin: "auto", textAlign: "center", padding: "20px" }}>
-      <h2 style={{ marginBottom: "60px", marginTop:"20px", color: "#6b4eff", fontSize: "2.5vw",
-                    fontWeight: "bold", }}>What Our Clients Say Abous us </h2>
-      <Slider {...settings}>
-        {testimonials.map((testimonial, index) => (
-          <div key={index} style={{ padding: "20px", textAlign: "center" }}>
-            <div
-              style={{
-                width: "100px",
-                height: "100px",
-                borderRadius: "50%",
-                overflow: "hidden",
-                margin: "0 auto",
-                border: "4px solid #6b4eff",
-              }}
-            >
-              <img
-                src={testimonial.img}
-                alt={testimonial.name}
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </div>
-            <h4 style={{ marginTop: "10px", color: "#333" }}>{testimonial.name}</h4>
-            <p style={{ fontStyle: "italic", color: "#777" }}>{testimonial.role}</p>
-            <p style={{ fontSize: "14px", color: "#555" }}>"{testimonial.text}"</p>
+        {/* Visitors Section */}
+        <section className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-2xl p-8 max-w-5xl mx-auto">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-6 sm:space-y-0">
+            {visitors.map((item, idx) => (
+              <div key={idx} className="text-center">
+                <div className="text-3xl sm:text-4xl font-bold">{item.number}</div>
+                <div className="text-lg sm:text-xl font-medium">{item.label}</div>
+              </div>
+            ))}
           </div>
- ))}
-      </Slider>
-                </div> */}
+        </section>
 
+        {/* Why Choose Us Section */}
+        <section className="space-y-8 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-500">
+            Why Choose Us?
+          </h2>
+          <p className="mx-auto text-base sm:text-lg text-gray-700 max-w-2xl">
+            An IT firm that keeps your IT running smoothly is like a plumber fixing your pipes;
+            that’s exactly what a true MSP should do—seamlessly and reliably.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {reasons.map((item, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition-shadow duration-300">
+                <img src={item.icon} alt={item.title} className="w-16 h-16 mb-4" />
+                <h3 className="text-xl font-semibold text-purple-600 mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
+        {/* Services Section */}
+        <HomeServicesSection services={services} />
 
-
-
-
-
-
-
-
+        {/* Testimonials Section */}
+        <HomeClientTestimonials testimonials={testimonials} />
 
         {/* Blog Section */}
-        <HomeBlogSection></HomeBlogSection>
-            
-
-
-
+        <HomeBlogSection />
 
         {/* Contact Form */}
-        <HomeContactForm></HomeContactForm>
-
-
-        {/* Contact Section */}
-       
-     {/* Contact Section */}
-    
-
-
-
-
-
-        </div>
-    );
+        <HomeContactForm />
+      </main>
+    </div>
+  );
 };
 
 export default Homepage;

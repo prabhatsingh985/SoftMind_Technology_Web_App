@@ -5,7 +5,7 @@ import LinkedIn from "../assets/LinkedIn.png";
 import Instagram from "../assets/Instagram.png";
 import Facebook from "../assets/Facebook.png";
 import YouTube from "../assets/YouTube.png";
-
+import logo1 from "../assets/logo1.png";
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-purple-600 to-blue-500 text-white py-6 px-4 shadow-lg w-full">
@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-between items-center mb-6 max-w-6xl mx-auto gap-4">
         {/* Logo */}
         <img
-          src="/src/assets/logo1.png"
+          src= {logo1}
           alt="Softmind Technologies"
           className="w-24"
         />

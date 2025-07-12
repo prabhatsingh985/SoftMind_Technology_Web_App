@@ -293,6 +293,9 @@ Your Server
   }
 });
 
+app.get('/api/check',  (req, res) => {
+  res.send("Server is running and ready to accept requests!");
+});
 // Start server
 app.listen(PORT, HOST, () => {
     console.log(`Server is running on http://${HOST}:${PORT}`);
